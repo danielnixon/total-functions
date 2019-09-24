@@ -6,7 +6,7 @@ A collection of total functions to replace TypeScript's built-in partial functio
 ```javascript
 "use strict";
 
-// An ESLint rule to ban useage of the array index operator.
+// An ESLint rule to ban useage of the array index operator, which is not well-typed in TypeScript.
 // See https://github.com/Microsoft/TypeScript/issues/13778
 // See https://eslint.org/docs/developer-guide/working-with-rules#runtime-rules
 module.exports = {
