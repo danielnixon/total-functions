@@ -5,7 +5,15 @@ A collection of total functions to replace TypeScript's built-in [partial functi
 
 ### `get` (type-safe array index operator)
 
-The [array index operator is not well-typed](https://github.com/Microsoft/TypeScript/issues/13778) in TypeScript. `get` is a safe alternative. I'll get around to publishing an npm package eventually, but for now you can copy and paste this:
+The [array index operator is not well-typed](https://github.com/Microsoft/TypeScript/issues/13778) in TypeScript:
+
+```typescript
+const a: object[] = [];
+const b = a[0]; // b has type object, not object | undefined as you might expect
+b.toString(); // boom
+```
+
+`get` (below) is a safe alternative. I'll get around to publishing an npm package eventually, but for now you can copy and paste this:
 
 ```typescript
 /**
