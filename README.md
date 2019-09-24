@@ -21,7 +21,7 @@ b.toString(); // boom
  * to replace the default (partial) array index operator.
  * @see https://github.com/Microsoft/TypeScript/issues/13778
  */
-const get = <T, A extends { readonly [n: number]: T }, I extends number>(
+export const get = <T, A extends { readonly [n: number]: T }, I extends number>(
   a: A,
   i: I,
 ): typeof a[number] extends typeof a[typeof i]
