@@ -39,3 +39,7 @@ const get = <T, A extends { readonly [n: number]: T }, I extends number>(
     ? typeof a[typeof i] | undefined
     : typeof a[typeof i];
 ```
+
+
+# See Also
+* https://github.com/danielnixon/readonly-types
