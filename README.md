@@ -1,5 +1,5 @@
 # total-functions
-A collection of total functions to replace TypeScript's built-in partial functions.
+A collection of total functions to replace TypeScript's built-in [partial functions](https://wiki.haskell.org/Partial_functions).
 
 `no-array-subscript.js`:
 
