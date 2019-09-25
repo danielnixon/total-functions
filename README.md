@@ -74,6 +74,16 @@ const a100 = get(as, 100); // 1 | 2 | 3 | undefined
 const record = { 1: "asdf" } as Record<number, string>;
 const record1 = get(record, 1); // string | undefined
 const record100 = get(record, 100); // string | undefined
+
+// object
+const obj = { 1: "asdf" };
+const obj1 = get(obj, 1); // string
+const obj100 = get(obj, 100); // doesn't compile
+
+// const object
+const constObj = { 1: "asdf" } as const;
+const constObj1 = get(constObj, 1); // "asdf"
+const constObj100 = get(constObj, 100); // doesn't compile
 ```
 
 Here's a corresponding ESLint rule to ban the unsafe array index operator.
