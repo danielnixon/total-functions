@@ -16,20 +16,31 @@ b.toString(); // boom
 `get` (below) is a safe alternative. I'll get around to publishing an npm package eventually, but for now you can copy and paste this:
 
 ```typescript
+export type ArrayIndexReturnValue<
+  A extends ArrayLike<unknown>,
+  I extends number
+  // If this is a tuple we don't need to add undefined to the return type,
+  // but if it's just a plain old array we have to add undefined to the return type.
+  // this also catches negative indices passed to tuples.
+> = A[number] extends A[I] ? A[I] | undefined : A[I];
+
 /**
  * A total function (one that doesn't lie about the possibility of returning undefined)
  * to replace the default (partial) array index operator.
+ *
  * @see https://github.com/Microsoft/TypeScript/issues/13778
  */
-export const get = <T, A extends { readonly [n: number]: T }, I extends number>(
+export const get = <
+  A extends Record<I, unknown> | ArrayLike<unknown>,
+  I extends number
+>(
   a: A,
   i: I,
-): typeof a[number] extends typeof a[typeof i]
-  ? typeof a[typeof i] | undefined
-  : typeof a[typeof i] =>
-  a[i] as typeof a[number] extends typeof a[typeof i]
-    ? typeof a[typeof i] | undefined
-    : typeof a[typeof i];
+): A extends ArrayLike<unknown>
+  ? ArrayIndexReturnValue<A, typeof i>
+  : typeof a extends { readonly [i in I]: unknown }
+  ? typeof a[typeof i]
+  : typeof a[typeof i] | undefined => a[i] as any;
 ```
 
 Usage examples:
