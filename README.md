@@ -18,11 +18,15 @@ b.toString(); // boom
 ```typescript
 export type ArrayIndexReturnValue<
   A extends ArrayLike<unknown>,
-  I extends number
+  I extends string | number | symbol
   // If this is a tuple we don't need to add undefined to the return type,
   // but if it's just a plain old array we have to add undefined to the return type.
-  // this also catches negative indices passed to tuples.
-> = A[number] extends A[I] ? A[I] | undefined : A[I];
+  // This also catches negative indices passed to tuples.
+> = I extends number
+  ? A[number] extends A[I]
+    ? A[I] | undefined
+    : A[I]
+  : never;
 
 /**
  * A total function (one that doesn't lie about the possibility of returning undefined)
@@ -32,7 +36,7 @@ export type ArrayIndexReturnValue<
  */
 export const get = <
   A extends Record<I, unknown> | ArrayLike<unknown>,
-  I extends number
+  I extends keyof A
 >(
   a: A,
   i: I,
