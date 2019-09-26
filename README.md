@@ -35,7 +35,7 @@ export type ArrayIndexReturnValue<
  * @see https://github.com/Microsoft/TypeScript/issues/13778
  */
 export const get = <
-  A extends Record<I, unknown> | ArrayLike<unknown>,
+  A extends Record<string | number | symbol, unknown> | ArrayLike<unknown>,
   I extends keyof A
 >(
   a: A,
@@ -43,8 +43,8 @@ export const get = <
 ): A extends ArrayLike<unknown>
   ? ArrayIndexReturnValue<A, typeof i>
   : typeof a extends { readonly [i in I]: unknown }
-  ? typeof a[typeof i]
-  : typeof a[typeof i] | undefined => a[i] as any;
+  ? A[I]
+  : A[I] | undefined => a[i] as any;
 ```
 
 Usage examples:
