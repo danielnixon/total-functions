@@ -101,7 +101,7 @@ I'll get around to publishing an ESLint plugin eventually, but for now you can u
 
 // An ESLint rule to ban usage of the array index operator, which is not well-typed in TypeScript.
 // See https://github.com/Microsoft/TypeScript/issues/13778
-// See https://eslint.org/docs/developer-guide/working-with-rules#runtime-rules
+// See https://github.com/estree/estree/blob/master/es5.md#memberexpression
 module.exports = {
   create: context => ({
     MemberExpression: node => {
