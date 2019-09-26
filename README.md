@@ -107,11 +107,7 @@ module.exports = {
     MemberExpression: node => {
       // TODO leverage type information here.
       // https://github.com/typescript-eslint/typescript-eslint#can-we-write-rules-which-leverage-type-information
-      if (
-        (node.parent.computed &&
-          typeof node.parent.property.value !== "string") ||
-        typeof node.property.value === "number"
-      ) {
+      if (node.computed) {
         context.report({
           node: node,
           message: "Array subscript access is not type-safe in TypeScript.",
