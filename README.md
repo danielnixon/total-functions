@@ -101,17 +101,22 @@ I'll get around to publishing an ESLint plugin eventually, but for now you can u
 module.exports = {
   create: context => ({
     MemberExpression: node => {
-      if (Number.isInteger(node.property.value)) {
+      // TODO leverage type information here.
+      // https://github.com/typescript-eslint/typescript-eslint#can-we-write-rules-which-leverage-type-information
+      if (
+        (node.parent.computed &&
+          typeof node.parent.property.value !== "string") ||
+        typeof node.property.value === "number"
+      ) {
         context.report({
           node: node,
-          message: "Array index operator is not type-safe in TypeScript.",
+          message: "Array subscript access is not type-safe in TypeScript.",
         });
       }
     },
   }),
 };
 ```
-
 
 # See Also
 * https://github.com/danielnixon/readonly-types
