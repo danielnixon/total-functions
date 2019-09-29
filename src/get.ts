@@ -10,7 +10,36 @@ export type ArrayIndexReturnValue<
     : A[I]
   : never;
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
+export type GetReturnType<
+  A extends Record<string | number | symbol, unknown> | ArrayLike<unknown>,
+  I extends keyof A
+> = A extends ArrayLike<unknown>
+  ? ArrayIndexReturnValue<A, I>
+  : A extends { readonly [i in I]: unknown }
+  ? A[I]
+  : A[I] | undefined;
+
+/**
+ * If `undefined` is in `GetReturnType<A, I>` but NOT in `A[I]` then
+ * we can safely assume the return type is undefined. This allows us
+ * to give a better return type for negative number array indices.
+ *
+ * Compare:
+ *
+ * Without the hack:
+ * GetReturnType<ReadonlyArray<1 | 2 | 3>, -1>; // 1 | 2 | 3 | undefined
+ *
+ * With the hack:
+ * GetReturnTypeWithNegativeHack<ReadonlyArray<1 | 2 | 3>, -1>; // undefined
+ */
+export type GetReturnTypeWithNegativeHack<
+  A extends Record<string | number | symbol, unknown> | ArrayLike<unknown>,
+  I extends keyof A
+> = undefined extends GetReturnType<A, I>
+  ? undefined extends A[I]
+    ? GetReturnType<A, I>
+    : undefined
+  : GetReturnType<A, I>;
 
 /**
  * A total function (one that doesn't lie about the possibility of returning undefined)
@@ -24,10 +53,5 @@ export const get = <
 >(
   a: A,
   i: I
-): A extends ArrayLike<unknown>
-  ? ArrayIndexReturnValue<A, typeof i>
-  : typeof a extends { readonly [i in I]: unknown }
-  ? A[I]
-  : A[I] | undefined => a[i] as any;
-
-/* eslint-enable @typescript-eslint/no-explicit-any */
+): GetReturnTypeWithNegativeHack<A, I> =>
+  a[i] as GetReturnTypeWithNegativeHack<A, I>;
