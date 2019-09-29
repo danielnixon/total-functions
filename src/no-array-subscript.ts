@@ -1,14 +1,8 @@
-/* eslint-disable functional/functional-parameters */
-/* eslint-disable functional/prefer-readonly-type */
-/* eslint-disable functional/no-return-void */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { RuleModule } from "@typescript-eslint/experimental-utils/dist/ts-eslint";
 
 /**
  * An ESLint rule to ban usage of the array index operator, which is not well-typed in TypeScript.
- * See https://github.com/Microsoft/TypeScript/issues/13778
- * See https://github.com/estree/estree/blob/master/es5.md#memberexpression
+ * @see https://github.com/Microsoft/TypeScript/issues/13778
  */
 const noArraySubscript: RuleModule<"errorStringGeneric", readonly []> = {
   meta: {

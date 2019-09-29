@@ -5,3 +5,4 @@ script:
   - yarn build
   - yarn lint
   - yarn type-coverage
+  - yarn test
