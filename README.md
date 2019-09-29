@@ -7,6 +7,16 @@
 
 A collection of total functions to replace TypeScript's built-in [partial functions](https://wiki.haskell.org/Partial_functions).
 
+## Installation
+
+```sh
+# yarn
+yarn add total-functions
+
+# npm
+npm install total-functions
+```
+
 ## The Functions
 
 ### `get` (type-safe array index operator)
