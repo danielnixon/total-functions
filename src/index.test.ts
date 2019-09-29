@@ -4,7 +4,7 @@
 import { get } from ".";
 
 describe("get", () => {
-  it("provides a safe alternative to array subscript access", async () => {
+  it("provides a safe alternative to array subscript access", () => {
     // tuple
     const xs = [1, 2, 3] as const;
     expect<2>(get(xs, 1)).toBe(2);
