@@ -6,9 +6,11 @@ export type ArrayIndexReturnValue<
   // This also catches negative indices passed to tuples.
 > = I extends number
   ? A[number] extends A[I]
-    ? A[I] | undefined
-    : A[I]
-  : never;
+    ? number extends A["length"]
+      ? A[I] | undefined // we don't have a defined length - have to include undefined
+      : undefined // we have a defined length - this must be undefined
+    : A[I] // Tuple - don't need undefined
+  : undefined;
 
 export type GetReturnType<
   A extends Record<string | number | symbol, unknown> | ArrayLike<unknown>,

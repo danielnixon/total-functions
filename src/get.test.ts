@@ -9,23 +9,26 @@ describe("get", () => {
     const xs = [1, 2, 3] as const;
     expect<2>(get(xs, 1)).toBe(2);
     expect<undefined>(get(xs, 100)).toBe(undefined);
-    expect<1 | 2 | 3 | undefined>(get(xs, -1)).toBe(undefined);
+    expect<undefined>(get(xs, -1)).toBe(undefined);
 
     // array
     const ys = [1, 2, 3];
     expect<number | undefined>(get(ys, 1)).toBe(2);
     expect<number | undefined>(get(ys, 100)).toBe(undefined);
+    expect<number | undefined>(get(ys, -1)).toBe(undefined);
 
     // sparse array
     // eslint-disable-next-line no-sparse-arrays
     const zs = [1, , 2, 3];
     expect<number | undefined>(get(zs, 1)).toBe(undefined);
     expect<number | undefined>(get(zs, 100)).toBe(undefined);
+    expect<number | undefined>(get(zs, -1)).toBe(undefined);
 
     // readonly array
     const as = [1, 2, 3] as ReadonlyArray<1 | 2 | 3>;
     expect<1 | 2 | 3 | undefined>(get(as, 1)).toBe(2);
     expect<1 | 2 | 3 | undefined>(get(as, 100)).toBe(undefined);
+    expect<1 | 2 | 3 | undefined>(get(as, -1)).toBe(undefined);
 
     // record
     const record = { 1: "asdf" } as Record<number, string>;
