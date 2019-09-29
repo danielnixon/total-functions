@@ -1,7 +1,7 @@
 /* eslint-disable functional/functional-parameters */
 /* eslint-disable functional/no-expression-statement */
 
-import { get } from ".";
+import { get } from "./get";
 
 describe("get", () => {
   it("provides a safe alternative to array subscript access", () => {
