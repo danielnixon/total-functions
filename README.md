@@ -90,33 +90,12 @@ const constObj1 = get(constObj, 1); // "asdf"
 const constObj100 = get(constObj, 100); // doesn't compile
 ```
 
-Here's a corresponding ESLint rule to ban the unsafe array index operator.
+There's also a corresponding ESLint rule to ban the unsafe array index operator.
 
-I'll get around to publishing an ESLint plugin eventually, but for now you can use it as a [runtime rule](https://eslint.org/docs/developer-guide/working-with-rules#runtime-rules).
+I'll get around to publishing an ESLint plugin eventually, but for now you can use it as a [runtime rule](https://eslint.org/docs/developer-guide/working-with-rules#runtime-rules):
 
-`no-array-subscript.js`:
-
-```javascript
-"use strict";
-
-// An ESLint rule to ban usage of the array index operator, which is not well-typed in TypeScript.
-// See https://github.com/Microsoft/TypeScript/issues/13778
-// See https://github.com/estree/estree/blob/master/es5.md#memberexpression
-module.exports = {
-  create: context => ({
-    MemberExpression: node => {
-      // TODO leverage type information here.
-      // https://github.com/typescript-eslint/typescript-eslint#can-we-write-rules-which-leverage-type-information
-      if (node.computed) {
-        context.report({
-          node: node,
-          message: "Array subscript access is not type-safe in TypeScript.",
-        });
-      }
-    },
-  }),
-};
-```
+1. Add `--rulesdir node_modules/total-functions/dist` to your `eslint` command line.
+2. Add `"no-array-subscript": "error"` to your `rules` in `eslintrc.js`.
 
 # See Also
 * https://github.com/danielnixon/readonly-types
