@@ -9,7 +9,7 @@ describe("get", () => {
     const xs = [1, 2, 3] as const;
     expect<2>(get(xs, 1)).toBe(2);
     expect<undefined>(get(xs, 100)).toBe(undefined);
-    expect<undefined>(get(xs, -1)).toBe(undefined);
+    expect<1 | 2 | 3 | undefined>(get(xs, -1)).toBe(undefined);
 
     // array
     const ys = [1, 2, 3];

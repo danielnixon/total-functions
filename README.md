@@ -54,7 +54,7 @@ More usage examples:
 const xs = [1, 2, 3] as const;
 const x1 = get(xs, 1); // 2
 const x100 = get(xs, 100); // undefined
-const xMinus1 = get(xs, -1); // undefined
+const xMinus1 = get(xs, -1); // 1 | 2 | 3 | undefined
 xs.map(x => x /* 1 | 2 | 3 */);
 
 // array
