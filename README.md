@@ -7,6 +7,8 @@
 
 A collection of total functions to replace TypeScript's built-in [partial functions](https://wiki.haskell.org/Partial_functions).
 
+Intended to be used with [strictNullChecks](https://basarat.gitbooks.io/typescript/docs/options/strictNullChecks.html) enabled.
+
 ## Installation
 
 ```sh
