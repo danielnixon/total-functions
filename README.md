@@ -27,6 +27,10 @@ The [array index operator is not well-typed](https://github.com/Microsoft/TypeSc
 const a: object[] = [];
 const b = a[0]; // b has type object, not object | undefined as you might expect
 b.toString(); // boom
+
+const record = { foo: "foo" } as Record<string, string>;
+const bar = record["bar"]; // bar has type string, not string | undefined
+bar.toUpperCase(); // boom
 ```
 
 `get` is a safe alternative:
@@ -35,6 +39,8 @@ b.toString(); // boom
 import { get } from "total-functions";
 
 const b = get(a, 0); // b has type object | undefined
+
+const bar = get(record, "bar"); // bar has type string | undefined
 ```
 
 More usage examples:
