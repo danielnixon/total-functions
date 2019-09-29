@@ -99,3 +99,4 @@ I'll get around to publishing an ESLint plugin eventually, but for now you can u
 
 # See Also
 * https://github.com/danielnixon/readonly-types
+* https://github.com/jonaskello/eslint-plugin-functional
