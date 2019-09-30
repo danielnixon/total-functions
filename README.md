@@ -45,7 +45,7 @@ const b = get(a, 0); // b has type object | undefined
 const bar = get(record, "bar"); // bar has type string | undefined
 ```
 
-Note that `get` will not include `undefined` in the return type when there is enough type information to be confident that the result can never be undefined. See the object and tuple examples below for examples where `undefined` is not included in the return type.
+Note that `get` will exclude `undefined` from the return type when there is enough type information to be confident that the result cannot be undefined. See the object and tuple examples below for examples where `undefined` is not included in the return type.
 
 More usage examples:
 
