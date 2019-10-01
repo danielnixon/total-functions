@@ -1,6 +1,6 @@
 export type ArrayIndexReturnValue<
   A extends ArrayLike<unknown>,
-  I extends string | number | symbol
+  I extends PropertyKey
   // If this is a tuple we don't need to add undefined to the return type,
   // but if it's just a plain old array we have to add undefined to the return type.
   // This also catches negative indices passed to tuples.
@@ -13,8 +13,8 @@ export type ArrayIndexReturnValue<
   : undefined;
 
 export type GetReturnType<
-  A extends Record<string | number | symbol, unknown> | ArrayLike<unknown>,
-  I extends keyof A
+  A extends Record<PropertyKey, unknown> | ArrayLike<unknown>,
+  I extends (A extends ArrayLike<unknown> ? number : keyof A)
 > = A extends ArrayLike<unknown>
   ? ArrayIndexReturnValue<A, I>
   : A extends { readonly [i in I]: unknown }
@@ -28,8 +28,8 @@ export type GetReturnType<
  * @see https://github.com/Microsoft/TypeScript/issues/13778
  */
 export const get = <
-  A extends Record<string | number | symbol, unknown> | ArrayLike<unknown>,
-  I extends keyof A
+  A extends Record<PropertyKey, unknown> | ArrayLike<unknown>,
+  I extends (A extends ArrayLike<unknown> ? number : keyof A)
 >(
   a: A,
   i: I

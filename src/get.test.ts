@@ -8,8 +8,9 @@ describe("get", () => {
     // tuple
     const xs = [1, 2, 3] as const;
     expect<2>(get(xs, 1)).toBe(2);
-    expect<undefined>(get(xs, 100)).toBe(undefined);
+    expect<undefined>(get(xs, 100)).toBe(undefined); // TODO can we make this fail to compile?
     expect<undefined>(get(xs, -1)).toBe(undefined);
+    // get(xs, "length"); // doesn't compile
 
     // array
     const ys = [1, 2, 3];
