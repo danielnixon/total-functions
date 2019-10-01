@@ -14,7 +14,7 @@ export type ArrayIndexReturnValue<
 
 export type GetReturnType<
   A extends Record<PropertyKey, unknown> | ArrayLike<unknown>,
-  I extends (A extends ArrayLike<unknown> ? number : keyof A)
+  I extends A extends ArrayLike<unknown> ? number : keyof A
 > = A extends ArrayLike<unknown>
   ? ArrayIndexReturnValue<A, I>
   : A extends { readonly [i in I]: unknown }
@@ -29,7 +29,7 @@ export type GetReturnType<
  */
 export const get = <
   A extends Record<PropertyKey, unknown> | ArrayLike<unknown>,
-  I extends (A extends ArrayLike<unknown> ? number : keyof A)
+  I extends A extends ArrayLike<unknown> ? number : keyof A
 >(
   a: A,
   i: I
