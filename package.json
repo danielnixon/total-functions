@@ -1,6 +1,6 @@
 {
   "name": "total-functions",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A collection of total functions to replace TypeScript's built-in partial functions.",
   "main": "dist",
   "repository": "https://github.com/danielnixon/total-functions.git",
