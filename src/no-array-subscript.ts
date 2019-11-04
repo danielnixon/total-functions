@@ -10,7 +10,6 @@ const noArraySubscript: RuleModule<"errorStringGeneric", readonly []> = {
     docs: {
       category: "Possible Errors" as const,
       description: "Array subscript access is not type-safe in TypeScript.",
-      extraDescription: undefined,
       recommended: "error",
       url: "https://github.com/danielnixon/total-functions"
     },
