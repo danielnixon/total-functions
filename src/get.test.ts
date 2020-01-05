@@ -1,7 +1,7 @@
 /* eslint-disable functional/functional-parameters */
 /* eslint-disable functional/no-expression-statement */
 
-import { get } from "./get";
+import { get, getOrUndefined } from "./get";
 
 describe("get", () => {
   it("provides a safe alternative to array subscript access", () => {
@@ -45,5 +45,14 @@ describe("get", () => {
     const constObj = { 1: "asdf" } as const;
     expect<"asdf">(get(constObj, 1)).toBe("asdf");
     // const constObj100 = get(constObj, 100); // doesn't compile
+  });
+});
+
+describe("getOrUndefined", () => {
+  it("provides a safe alternative to array subscript access", () => {
+    const xs = [1, 2, 3];
+    expect<number | undefined>(getOrUndefined(xs, 1)).toBe(2);
+    expect<number | undefined>(getOrUndefined(xs, 100)).toBe(undefined);
+    expect<number | undefined>(getOrUndefined(xs, -1)).toBe(undefined);
   });
 });
