@@ -20,7 +20,8 @@ const noArraySubscript: RuleModule<"errorStringGeneric", readonly []> = {
     schema: []
   },
   create: context => ({
-    MemberExpression: node => {
+    // eslint-disable-next-line functional/no-return-void
+    MemberExpression: (node): void => {
       // TODO leverage type information here.
       // https://github.com/typescript-eslint/typescript-eslint#can-we-write-rules-which-leverage-type-information
       // eslint-disable-next-line functional/no-conditional-statement

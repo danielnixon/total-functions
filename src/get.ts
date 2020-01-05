@@ -34,3 +34,12 @@ export const get = <
   a: A,
   i: I
 ): GetReturnType<A, I> => a[i] as GetReturnType<A, I>;
+
+/**
+ * An escape hatch for when you can't make the types line up in `get` and are willing
+ * to accept undefined always being included in the return type.
+ */
+export const getOrUndefined = <A, I extends keyof A>(
+  a: A,
+  i: I
+): A[I] | undefined => a[i];
