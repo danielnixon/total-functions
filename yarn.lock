@@ -286,23 +286,23 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@stryker-mutator/api@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/api/-/api-2.4.0.tgz#9e710b6dde7f889d5c6d573f349bb622c57b9a57"
-  integrity sha512-VV12SWtoHKM8G2CSUHD7b8O6zJSygHjAju+e9qOjmrTaEgy8KUVO7OWuUNcRLpcRDVAlB2osuo3qndMstpPExg==
+"@stryker-mutator/api@^2.4.0", "@stryker-mutator/api@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/api/-/api-2.5.0.tgz#5108d738054d17d27d89d470dcd54ae42465394c"
+  integrity sha512-6z2AZeGcI+ZzqZEBX6h+vWt11uBzLfAg24kV0b/CJZ69zNELRLkjJnLaE4aU1o5uE6OyFGKJJ0OVxtZrnvZSuQ==
   dependencies:
     mutation-testing-report-schema "^1.1.0"
     tslib "~1.10.0"
 
 "@stryker-mutator/core@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/core/-/core-2.4.0.tgz#533a2e42a2a6c9ada820a6ceb91b08285e7ccfaa"
-  integrity sha512-Z/PsUC/X2BOMJsbno9zWeNqx5sYeBYExtUQW2JL0niYNbs0xkhcU7S7UC2npjwGFOCrjjWzek5TQVGQtrlDhbw==
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/core/-/core-2.5.0.tgz#851dc5d6d41d543a7e82484a7a08899013221bb6"
+  integrity sha512-pafJ0FSQl5dJAte8/CGq+/X/kfVGRtLuf3M4aJ4YeHW+2fFOpCYhXOsEuJ66i9SVd2Ia9ItCKPk0CaOFSFE02g==
   dependencies:
-    "@stryker-mutator/api" "^2.4.0"
-    "@stryker-mutator/util" "^2.4.0"
+    "@stryker-mutator/api" "^2.5.0"
+    "@stryker-mutator/util" "^2.5.0"
     chalk "~3.0.0"
-    commander "~4.0.0"
+    commander "~4.1.0"
     get-port "~5.0.0"
     glob "~7.1.2"
     inquirer "~7.0.0"
@@ -320,7 +320,7 @@
     tree-kill "~1.2.0"
     tslib "~1.10.0"
     typed-inject "~2.1.1"
-    typed-rest-client "~1.5.0"
+    typed-rest-client "~1.7.1"
 
 "@stryker-mutator/jest-runner@^2.4.0":
   version "2.4.0"
@@ -341,10 +341,10 @@
     semver "~6.3.0"
     tslib "~1.10.0"
 
-"@stryker-mutator/util@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/util/-/util-2.4.0.tgz#20e1e2f2388ae4e91f67f442224d479a539edf27"
-  integrity sha512-+pKsudzHy7r51S39bpo/2N4lmdnFb9qhF34My3Y5BtXWZEcKm+FELWkCAC4H8CmO/j0RgTLyfnQDoaw4MjdLgg==
+"@stryker-mutator/util@^2.4.0", "@stryker-mutator/util@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/util/-/util-2.5.0.tgz#486808420b30f671d17748fd3b94473107c9adf1"
+  integrity sha512-l3bTvN2YbhwPPO0F6WBbUkgY6NC/34/jxpVQGlw0rZn72MPuRQBJtrfAH7KFN0OBG4QmIA6PC6c4z0X5IaWfow==
 
 "@types/babel__core@^7.1.0":
   version "7.1.3"
@@ -963,10 +963,10 @@ commander@~2.20.3:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
-commander@~4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-4.0.1.tgz#b67622721785993182e807f4883633e6401ba53c"
-  integrity sha512-IPF4ouhCP+qdlcmCedhxX4xiGBPyigb8v5NeUp+0LyhwLgxMqyp3S0vl7TAPfS/hiP7FC3caI/PB9lTmP8r1NA==
+commander@~4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.0.tgz#545983a0603fe425bc672d66c9e3c89c42121a83"
+  integrity sha512-NIQrwvv9V39FHgGFm36+U9SMQzbiHvU79k+iADraJTpmrFFfx7Ds0IvDoAdZsDrknlkRk14OYoWXb57uTh7/sw==
 
 component-emitter@^1.2.1:
   version "1.3.0"
@@ -3159,6 +3159,11 @@ punycode@^2.1.0, punycode@^2.1.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
+qs@^6.9.1:
+  version "6.9.1"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.1.tgz#20082c65cb78223635ab1a9eaca8875a29bf8ec9"
+  integrity sha512-Cxm7/SS/y/Z3MHWSxXb8lIFqgqBowP5JMlTUFyJN88y0SGQhVmZnqFK/PeuMX9LzUyWsqqhNxIyg0jlzq946yA==
+
 qs@~6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
@@ -3936,11 +3941,12 @@ typed-inject@~2.1.1:
   dependencies:
     typescript "^3.6.3"
 
-typed-rest-client@~1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/typed-rest-client/-/typed-rest-client-1.5.0.tgz#c0dda6e775b942fd46a2d99f2160a94953206fc2"
-  integrity sha512-DVZRlmsfnTjp6ZJaatcdyvvwYwbWvR4YDNFDqb+qdTxpvaVP99YCpBkA8rxsLtAPjBVoDe4fNsnMIdZTiPuKWg==
+typed-rest-client@~1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/typed-rest-client/-/typed-rest-client-1.7.1.tgz#932e837fca4ab1ba64c23b1a67f2e11931c05c4f"
+  integrity sha512-fZRDWFtUp3J2E0jOiCJYZ9LDrYZHpjY95su//ekqXERS7C1qojP6movh7M4JGURJnBuTVsO0g2N4vEoW5o3Djw==
   dependencies:
+    qs "^6.9.1"
     tunnel "0.0.4"
     underscore "1.8.3"
 
