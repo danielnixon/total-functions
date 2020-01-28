@@ -45,6 +45,10 @@ describe("get", () => {
     const constObj = { 1: "asdf" } as const;
     expect<"asdf">(get(constObj, 1)).toBe("asdf");
     // const constObj100 = get(constObj, 100); // doesn't compile
+
+    // string
+    const str = "foo" as const;
+    expect<string | undefined>(get(str, 1)).toBe("o");
   });
 });
 

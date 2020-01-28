@@ -9,8 +9,11 @@ module.exports = {
     "eslint:recommended",
     "plugin:sonarjs/recommended",
     "plugin:functional/recommended",
+    "plugin:functional/external-recommended",
     "plugin:jest/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended"
   ],
