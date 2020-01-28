@@ -16,11 +16,20 @@ module.exports = {
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended"
+    // TODO replace tslint's no-any and no-unsafe-any
+    // See https://github.com/typescript-eslint/typescript-eslint/issues/791
   ],
   env: {
     "jest/globals": true,
     es6: true
   },
   plugins: ["jest", "sonarjs", "functional", "@typescript-eslint", "prettier"],
-  rules: {}
+  rules: {
+    // Additional rules that are not part of `eslint:recommended`.
+    // See https://eslint.org/docs/rules/
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "no-await-in-loop": "error",
+    "no-new-wrappers": "error",
+  }
 };
