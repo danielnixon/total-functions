@@ -31,5 +31,6 @@ module.exports = {
     "no-implied-eval": "error",
     "no-await-in-loop": "error",
     "no-new-wrappers": "error",
+    "eqeqeq": "error",
   }
 };
