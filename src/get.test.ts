@@ -31,6 +31,12 @@ describe("get", () => {
     expect<1 | 2 | 3 | undefined>(get(as, 100)).toBe(undefined);
     expect<1 | 2 | 3 | undefined>(get(as, -1)).toBe(undefined);
 
+    // semi-tuple
+    const bs: readonly [number, ...(readonly string[])] = [1, "a", "b"];
+    expect<number | undefined>(get(bs, 0)).toBe(1); // TODO: can we exclude undefined here?
+    expect<string | undefined>(get(bs, 100)).toBe(undefined);
+    expect<string | number | undefined>(get(bs, -1)).toBe(undefined);
+
     // record
     const record = { 1: "asdf" } as Record<number, string>;
     expect<string | undefined>(get(record, 1)).toBe("asdf");

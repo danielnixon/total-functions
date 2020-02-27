@@ -3,6 +3,7 @@ import { RuleModule } from "@typescript-eslint/experimental-utils/dist/ts-eslint
 /**
  * An ESLint rule to ban usage of the array index operator, which is not well-typed in TypeScript.
  * @see https://github.com/Microsoft/TypeScript/issues/13778
+ * @see https://github.com/estree/estree/blob/master/es5.md#memberexpression
  */
 const noArraySubscript: RuleModule<"errorStringGeneric", readonly []> = {
   meta: {
@@ -15,7 +16,7 @@ const noArraySubscript: RuleModule<"errorStringGeneric", readonly []> = {
     },
     messages: {
       errorStringGeneric:
-        "Array subscript access is not type-safe in TypeScript."
+        "Array and object subscript access is not type-safe in TypeScript."
     },
     schema: []
   },
