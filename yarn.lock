@@ -340,6 +340,15 @@
     mutation-testing-report-schema "^1.1.0"
     tslib "~1.10.0"
 
+"@stryker-mutator/api@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/api/-/api-3.0.0.tgz#30dd888ff1a1575df04eb3bdade26c17b6b506e5"
+  integrity sha512-w6n5JQj6SNxGR4o2vXmoUOKF4E7pwwH8MGb1soLJs8R+KME+oT3rGntSFDUTR4LNMyWr3tRNgJ5YvW/HM9OS+w==
+  dependencies:
+    mutation-testing-report-schema "~1.3.0"
+    surrial "^2.0.1"
+    tslib "~1.11.1"
+
 "@stryker-mutator/core@^2.4.0":
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/@stryker-mutator/core/-/core-2.5.0.tgz#851dc5d6d41d543a7e82484a7a08899013221bb6"
@@ -376,21 +385,26 @@
     "@stryker-mutator/api" "^2.5.0"
     semver "~6.3.0"
 
-"@stryker-mutator/typescript@^2.4.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/typescript/-/typescript-2.5.0.tgz#3f6eb5620d00bbfce4f1ff8e8fe587b8c11a609d"
-  integrity sha512-y7NrmkTdvoS+Ef+6K8Z1WBRmQ5+Fh66ThWayCJrGBzd0PbNZEcSmv72ZtaYdWbAFwS46lg2hzwPd+q6E63QgLw==
+"@stryker-mutator/typescript@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/typescript/-/typescript-3.0.0.tgz#6a70c69e0280d6a8949b9840bd41528e3d0b51c8"
+  integrity sha512-hejfvTJWO/pyVJWlqaC6+qJ425zc0wr5uq/0awZroe9vKcnbzGpt4xJgIgTQ56vTWMWZV6Ry9EgL/XOWRkOLNg==
   dependencies:
-    "@stryker-mutator/api" "^2.5.0"
-    "@stryker-mutator/util" "^2.5.0"
+    "@stryker-mutator/api" "^3.0.0"
+    "@stryker-mutator/util" "^3.0.0"
     lodash.flatmap "~4.5.0"
     semver "~6.3.0"
-    tslib "~1.10.0"
+    tslib "~1.11.1"
 
 "@stryker-mutator/util@^2.5.0":
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/@stryker-mutator/util/-/util-2.5.0.tgz#486808420b30f671d17748fd3b94473107c9adf1"
   integrity sha512-l3bTvN2YbhwPPO0F6WBbUkgY6NC/34/jxpVQGlw0rZn72MPuRQBJtrfAH7KFN0OBG4QmIA6PC6c4z0X5IaWfow==
+
+"@stryker-mutator/util@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/util/-/util-3.0.0.tgz#09c23db8eabe50d32dff66d102f29a56e8a6658e"
+  integrity sha512-5qilgq1gc255N1qpPa/5qHIJiEdRm30nE6HZS3QDtprmmfaq5f7lsac9OPOIKqYUHlnKqbAy0Pq9niKM9kh6qA==
 
 "@types/babel__core@^7.1.0":
   version "7.1.3"
@@ -3060,6 +3074,11 @@ mutation-testing-report-schema@^1.1.0, mutation-testing-report-schema@^1.2.0:
   resolved "https://registry.yarnpkg.com/mutation-testing-report-schema/-/mutation-testing-report-schema-1.2.0.tgz#ed89cde7302833108b75703d4ef62085b1bb490e"
   integrity sha512-4LdCuO33sH8R2YJ1idP+GUTjPR/VeSEml1tboQX0+5dSwH2YccUrw73rzAEOzkbeD+IyzBDHLzQKmanScV4smA==
 
+mutation-testing-report-schema@~1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/mutation-testing-report-schema/-/mutation-testing-report-schema-1.3.0.tgz#19632561fe5680fa9b96c49e575817b0f0ac506f"
+  integrity sha512-jrULcgLtD9pNkoHVDifx6YBh55c4STleJCRr1jxJ6Wy7Nx6DsD0MN3/BBZ2sQxEo+Y+wWzX+Udipyo1uLxRLUg==
+
 mute-stream@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.8.tgz#1630c42b2251ff81e2a283de96a5497ea92e5e0d"
@@ -4062,6 +4081,11 @@ supports-hyperlinks@^2.0.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
+surrial@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/surrial/-/surrial-2.0.1.tgz#25d74e51601bac90e56becbe7e071d7f953d59a3"
+  integrity sha512-s1LQlqY4am79aFsRLFtpqirqqqIODxdVX8RlphoYktb/9GMbMBqH15UraSoyGt5S5UEvpUzWaY0LcEhrvCh12g==
+
 surrial@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/surrial/-/surrial-1.0.0.tgz#3ac560cc7038a8ff446920a4f7c3495e1f03a578"
@@ -4240,6 +4264,11 @@ tslib@1, tslib@^1.8.1, tslib@^1.9.0, tslib@~1.10.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+
+tslib@~1.11.1:
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
+  integrity sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
 
 tsutils@3, tsutils@^3.17.1:
   version "3.17.1"
