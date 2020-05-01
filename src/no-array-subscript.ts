@@ -12,15 +12,15 @@ const noArraySubscript: RuleModule<"errorStringGeneric", readonly []> = {
       category: "Possible Errors" as const,
       description: "Array subscript access is not type-safe in TypeScript.",
       recommended: "error",
-      url: "https://github.com/danielnixon/total-functions"
+      url: "https://github.com/danielnixon/total-functions",
     },
     messages: {
       errorStringGeneric:
-        "Array and object subscript access is not type-safe in TypeScript."
+        "Array and object subscript access is not type-safe in TypeScript.",
     },
-    schema: []
+    schema: [],
   },
-  create: context => ({
+  create: (context) => ({
     // eslint-disable-next-line functional/no-return-void
     MemberExpression: (node): void => {
       // TODO leverage type information here.
@@ -30,11 +30,11 @@ const noArraySubscript: RuleModule<"errorStringGeneric", readonly []> = {
         // eslint-disable-next-line functional/no-expression-statement
         context.report({
           node: node,
-          messageId: "errorStringGeneric"
+          messageId: "errorStringGeneric",
         });
       }
-    }
-  })
+    },
+  }),
 };
 
 export const { meta, create } = noArraySubscript;
