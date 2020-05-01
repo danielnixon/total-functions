@@ -8,9 +8,13 @@ describe("get", () => {
     // tuple
     const xs = [1, 2, 3] as const;
 
+    expect<1>(get(xs, 0)).toBe(1);
     expect<2>(get(xs, 1)).toBe(2);
-    expect<undefined>(get(xs, 100)).toBe(undefined); // TODO can we make this fail to compile?
-    expect<undefined>(get(xs, -1)).toBe(undefined);
+    expect<3>(get(xs, 2)).toBe(3);
+    // @ts-expect-error
+    get(xs, 100);
+    // @ts-expect-error
+    get(xs, -1);
     // @ts-expect-error
     get(xs, "length");
 

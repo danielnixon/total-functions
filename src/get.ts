@@ -16,12 +16,36 @@ export type ArrayIndexReturnValue<
 
 export type GetReturnType<
   A extends Record<PropertyKey, unknown> | ArrayLike<unknown>,
-  I extends A extends ArrayLike<unknown> ? number : keyof A
+  I extends A extends ArrayLike<unknown> ? ArrayIndex<A> : keyof A
 > = A extends ArrayLike<unknown>
   ? ArrayIndexReturnValue<A, I>
   : A extends { readonly [i in I]: unknown }
   ? A[I]
   : A[I] | undefined;
+
+type ArrayIndex<A extends ArrayLike<unknown>> = number extends A["length"]
+  ? number
+  : 0 extends A["length"]
+  ? never
+  : 1 extends A["length"]
+  ? 0
+  : 2 extends A["length"]
+  ? 0 | 1
+  : 3 extends A["length"]
+  ? 0 | 1 | 2
+  : 4 extends A["length"]
+  ? 0 | 1 | 2 | 3
+  : 5 extends A["length"]
+  ? 0 | 1 | 2 | 3 | 4
+  : 6 extends A["length"]
+  ? 0 | 1 | 2 | 3 | 4 | 5
+  : 7 extends A["length"]
+  ? 0 | 1 | 2 | 3 | 4 | 5 | 6
+  : 8 extends A["length"]
+  ? 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
+  : 9 extends A["length"]
+  ? 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
+  : number;
 
 /**
  * A total function (one that doesn't lie about the possibility of returning undefined)
@@ -31,7 +55,7 @@ export type GetReturnType<
  */
 export const get = <
   A extends Record<PropertyKey, unknown> | ArrayLike<unknown>,
-  I extends A extends ArrayLike<unknown> ? number : keyof A
+  I extends A extends ArrayLike<unknown> ? ArrayIndex<A> : keyof A
 >(
   a: A,
   i: I
