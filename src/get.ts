@@ -9,6 +9,8 @@ export type ArrayIndexReturnValue<
     ? number extends A["length"]
       ? A[I] | undefined // we don't have a defined length - have to include undefined
       : undefined // we have a defined length - this must be undefined
+    : number extends A["length"]
+    ? A[I] | undefined // Semi-tuple - need undefined. TODO: exclude undefined for the tuple portions of this array
     : A[I] // Tuple - don't need undefined
   : undefined;
 
