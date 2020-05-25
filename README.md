@@ -6,7 +6,7 @@
 [![npm](https://img.shields.io/npm/v/total-functions.svg)](https://www.npmjs.com/package/total-functions)
 
 [![dependencies Status](https://david-dm.org/danielnixon/total-functions/status.svg)](https://david-dm.org/danielnixon/total-functions)
-[![devDependencies Status](https://david-dm.org/danielnixon/total-functions/dev-status.svg)](https://david-dm.org/danielnixon/total-functions?type=dev) [![Greenkeeper badge](https://badges.greenkeeper.io/danielnixon/total-functions.svg)](https://greenkeeper.io/)
+[![devDependencies Status](https://david-dm.org/danielnixon/total-functions/dev-status.svg)](https://david-dm.org/danielnixon/total-functions?type=dev)
 
 A collection of total functions to replace TypeScript's built-in [partial functions](https://wiki.haskell.org/Partial_functions).
 
