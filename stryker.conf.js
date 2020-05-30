@@ -7,6 +7,6 @@ module.exports = function(config) {
     transpilers: [],
     coverageAnalysis: "off",
     tsconfigFile: "tsconfig.json",
-    mutate: ["src/**/*.ts", "!src/**/*.test.ts", "!src/**/no-array-subscript.ts"]
+    mutate: ["src/**/*.ts", "!src/**/*.test.ts"]
   });
 };
