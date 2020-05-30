@@ -101,4 +101,5 @@ See https://github.com/danielnixon/eslint-plugin-total-functions
 
 # See Also
 * https://github.com/danielnixon/readonly-types
+* https://github.com/danielnixon/eslint-plugin-total-functions
 * https://github.com/jonaskello/eslint-plugin-functional
