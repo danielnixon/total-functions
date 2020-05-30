@@ -1,3 +1,5 @@
+/* eslint-disable total-functions/no-array-subscript */
+
 export type ArrayIndexReturnValue<
   A extends ArrayLike<unknown>,
   I extends PropertyKey
