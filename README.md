@@ -95,7 +95,7 @@ const constObj100 = get(constObj, 100); // doesn't compile
 
 ## ESLint
 
-There's also a corresponding ESLint rule to ban the unsafe array index operator.
+There's a corresponding ESLint plugin to ban the partial functions replaced by this library.
 
 See https://github.com/danielnixon/eslint-plugin-total-functions
 
