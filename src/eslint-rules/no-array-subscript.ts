@@ -38,3 +38,4 @@ const noArraySubscript: RuleModule<"errorStringGeneric", readonly []> = {
 };
 
 export const { meta, create } = noArraySubscript;
+export default noArraySubscript;
