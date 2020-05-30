@@ -93,12 +93,11 @@ const constObj1 = get(constObj, 1); // "asdf"
 const constObj100 = get(constObj, 100); // doesn't compile
 ```
 
+## ESLint
+
 There's also a corresponding ESLint rule to ban the unsafe array index operator.
 
-I'll get around to publishing an ESLint plugin eventually, but for now you can use it as a [runtime rule](https://eslint.org/docs/developer-guide/working-with-rules#runtime-rules):
-
-1. Add `--rulesdir node_modules/total-functions/dist` to your `eslint` command line.
-2. Add `"no-array-subscript": "error"` to your `rules` in `eslintrc.js`.
+See https://github.com/danielnixon/eslint-plugin-total-functions
 
 # See Also
 * https://github.com/danielnixon/readonly-types
