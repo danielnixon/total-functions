@@ -33,7 +33,7 @@ const a: object[] = [];
 const b = a[0]; // b has type object, not object | undefined as you might expect
 b.toString(); // boom
 
-const record = { foo: "foo" } as Record<string, string>;
+const record: Record<string, string> = { foo: "foo" };
 const bar = record["bar"]; // bar has type string, not string | undefined
 bar.toUpperCase(); // boom
 ```
@@ -73,12 +73,12 @@ const z100 = get(zs, 100); // number | undefined
 zs.map(z => z /* number | undefined */);
 
 // readonly array
-const as = [1, 2, 3] as ReadonlyArray<1 | 2 | 3>;
+const as: ReadonlyArray<1 | 2 | 3> = [1, 2, 3];
 const a1 = get(as, 1); // 1 | 2 | 3 | undefined
 const a100 = get(as, 100); // 1 | 2 | 3 | undefined
 
 // record
-const record = { 1: "asdf" } as Record<number, string>;
+const record: Record<number, string> = { 1: "asdf" };
 const record1 = get(record, 1); // string | undefined
 const record100 = get(record, 100); // string | undefined
 

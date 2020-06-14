@@ -33,7 +33,7 @@ describe("get", () => {
     expect<number | undefined>(get(zs, -1)).toBe(undefined);
 
     // readonly array
-    const as = [1, 2, 3] as ReadonlyArray<1 | 2 | 3>;
+    const as: ReadonlyArray<1 | 2 | 3> = [1, 2, 3];
     expect<1 | 2 | 3 | undefined>(get(as, 1)).toBe(2);
     expect<1 | 2 | 3 | undefined>(get(as, 100)).toBe(undefined);
     expect<1 | 2 | 3 | undefined>(get(as, -1)).toBe(undefined);
@@ -48,7 +48,7 @@ describe("get", () => {
     get(bs, "length");
 
     // record
-    const record = { 1: "asdf" } as Record<number, string>;
+    const record: Record<number, string> = { 1: "asdf" };
     expect<string | undefined>(get(record, 1)).toBe("asdf");
     expect<string | undefined>(get(record, 100)).toBe(undefined);
 
