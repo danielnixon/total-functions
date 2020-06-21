@@ -7,8 +7,7 @@ import { get, getOrUndefined } from "./get";
 describe("get", () => {
   it("provides a safe alternative to array subscript access", () => {
     // tuple
-    // TODO https://github.com/plantain-00/type-coverage/issues/52
-    const xs = [1, 2, 3] as const; // type-coverage:ignore-line
+    const xs = [1, 2, 3] as const;
 
     expect<1>(get(xs, 0)).toBe(1);
     expect<2>(get(xs, 1)).toBe(2);
@@ -60,13 +59,13 @@ describe("get", () => {
     get(obj, 100);
 
     // const object
-    const constObj = { 1: "asdf" } as const; // type-coverage:ignore-line
+    const constObj = { 1: "asdf" } as const;
     expect<"asdf">(get(constObj, 1)).toBe("asdf");
     // @ts-expect-error
     get(constObj, 100);
 
     // string
-    const str = "foo" as const; // type-coverage:ignore-line
+    const str = "foo" as const;
     expect<string | undefined>(get(str, 1)).toBe("o");
   });
 });
