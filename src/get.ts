@@ -62,7 +62,7 @@ export const get = <
   a: A,
   i: I
   // eslint-disable-next-line total-functions/no-unsafe-type-assertion
-): GetReturnType<A, I> => a[i] as GetReturnType<A, I>;
+): GetReturnType<A, I> => a[i] as GetReturnType<A, I>; // type-coverage:ignore-line
 
 /**
  * An escape hatch for when you can't make the types line up in `get` and are willing
