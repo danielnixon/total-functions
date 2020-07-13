@@ -23,7 +23,7 @@
     "eslint-plugin-total-functions": "^1.35.2",
     "jest": "^26.1.0",
     "prettier": "^2.0.5",
-    "ts-jest": "^26.1.1",
+    "ts-jest": "^26.1.2",
     "type-coverage": "^2.8.4",
     "typescript": "^3.9.6"
   },
