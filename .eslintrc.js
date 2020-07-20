@@ -36,12 +36,11 @@ module.exports = {
     "no-caller": "error",
     "require-unicode-regexp": "error",
     "no-loss-of-precision": "error",
-    // Additional rules that are not part of `total-functions/recommended`.
-    "total-functions/no-unsafe-type-assertion": "error",
     // Make typescript-eslint rules more aggressive.
     "@typescript-eslint/consistent-type-assertions": ["error", {
-      "assertionStyle": "as",
-      "objectLiteralTypeAssertions": "never"
-    }]
+      "assertionStyle": "never"
+    }],
+    // Don't need this given the above rule bans type assertions entirely.
+    "total-functions/no-unsafe-type-assertion": 0
   }
 };

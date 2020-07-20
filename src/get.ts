@@ -61,7 +61,7 @@ export const get = <
 >(
   a: A,
   i: I
-  // eslint-disable-next-line total-functions/no-unsafe-type-assertion
+  // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 ): GetReturnType<A, I> => a[i] as GetReturnType<A, I>; // type-coverage:ignore-line
 
 /**
