@@ -1,5 +1,3 @@
-/* eslint-disable total-functions/no-array-subscript */
-
 export type ArrayIndexReturnValue<
   A extends ArrayLike<unknown>,
   I extends PropertyKey
@@ -61,8 +59,8 @@ export const get = <
 >(
   a: A,
   i: I
-  // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-): GetReturnType<A, I> => a[i] as GetReturnType<A, I>; // type-coverage:ignore-line
+  // eslint-disable-next-line @typescript-eslint/consistent-type-assertions, total-functions/no-unsafe-subscript
+): GetReturnType<A, I> => a[i] as GetReturnType<A, I>;
 
 /**
  * An escape hatch for when you can't make the types line up in `get` and are willing
