@@ -45,7 +45,11 @@ module.exports = {
       "allowNumber": false,
       "allowNullableObject": false
     }],
-    // Don't need this given the above rule bans type assertions entirely.
+    // Interfaces encourage OO, types encourage FP.
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    // Require unknown type annotation in catch blocks.
+    "@typescript-eslint/no-implicit-any-catch": "error",
+    // Don't need this given consistent-type-assertions bans type assertions entirely.
     "total-functions/no-unsafe-type-assertion": 0
   }
 };
