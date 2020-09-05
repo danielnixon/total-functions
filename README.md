@@ -100,6 +100,8 @@ There's a corresponding ESLint plugin to ban the partial functions replaced by t
 See https://github.com/danielnixon/eslint-plugin-total-functions
 
 # See Also
+* [TypeScript for Functional Programmers](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-func.html)
 * https://github.com/danielnixon/readonly-types
 * https://github.com/danielnixon/eslint-plugin-total-functions
 * https://github.com/jonaskello/eslint-plugin-functional
+* https://github.com/danielnixon/eslint-config-typed-fp
