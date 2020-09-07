@@ -48,6 +48,7 @@ describe("get", () => {
     get(bs, "length");
 
     // record
+    // eslint-disable-next-line @typescript-eslint/ban-types
     const record: Record<number, string> = { 1: "asdf" };
     expect<string | undefined>(get(record, 1)).toBe("asdf");
     expect<string | undefined>(get(record, 100)).toBe(undefined);

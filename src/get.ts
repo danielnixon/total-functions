@@ -15,6 +15,7 @@ export type ArrayIndexReturnValue<
   : undefined;
 
 export type GetReturnType<
+  // eslint-disable-next-line @typescript-eslint/ban-types
   A extends Record<PropertyKey, unknown> | ArrayLike<unknown>,
   I extends A extends ArrayLike<unknown> ? ArrayIndex<A> : keyof A
 > = A extends ArrayLike<unknown>
@@ -54,6 +55,7 @@ type ArrayIndex<A extends ArrayLike<unknown>> = number extends A["length"]
  * @see https://github.com/Microsoft/TypeScript/issues/13778
  */
 export const get = <
+  // eslint-disable-next-line @typescript-eslint/ban-types
   A extends Record<PropertyKey, unknown> | ArrayLike<unknown>,
   I extends A extends ArrayLike<unknown> ? ArrayIndex<A> : keyof A
 >(
