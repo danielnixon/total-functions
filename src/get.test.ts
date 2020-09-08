@@ -20,14 +20,14 @@ describe("get", () => {
     get(xs, "length");
 
     // array
-    const ys = [1, 2, 3];
+    const ys: readonly number[] = [1, 2, 3];
     expect<number | undefined>(get(ys, 1)).toBe(2);
     expect<number | undefined>(get(ys, 100)).toBe(undefined);
     expect<number | undefined>(get(ys, -1)).toBe(undefined);
 
     // sparse array
     // eslint-disable-next-line no-sparse-arrays
-    const zs = [1, , 2, 3];
+    const zs: readonly (number | undefined)[] = [1, , 2, 3];
     expect<number | undefined>(get(zs, 1)).toBe(undefined);
     expect<number | undefined>(get(zs, 100)).toBe(undefined);
     expect<number | undefined>(get(zs, -1)).toBe(undefined);
@@ -73,7 +73,7 @@ describe("get", () => {
 
 describe("getOrUndefined", () => {
   it("provides a safe alternative to array subscript access", () => {
-    const xs = [1, 2, 3];
+    const xs: readonly number[] = [1, 2, 3];
     expect<number | undefined>(getOrUndefined(xs, 1)).toBe(2);
     expect<number | undefined>(getOrUndefined(xs, 100)).toBe(undefined);
     expect<number | undefined>(getOrUndefined(xs, -1)).toBe(undefined);
