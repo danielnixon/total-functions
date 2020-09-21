@@ -24,18 +24,25 @@ npm install total-functions
 
 ## The Functions
 
-### `get` (type-safe array index operator)
+### `get` (type-safe member and indexed access operator)
 
-The [array index operator is not well-typed](https://github.com/Microsoft/TypeScript/issues/13778) in TypeScript:
+Prior to TypeScript 4.1's [noUncheckedIndexedAccess](https://devblogs.microsoft.com/typescript/announcing-typescript-4-1-beta/#no-unchecked-indexed-access) option,  member access for arrays and records was not type safe. For example:
 
 ```typescript
-const a: object[] = [];
-const b = a[0]; // b has type object, not object | undefined as you might expect
-b.toString(); // boom
+const a: string[] = [];
+const b = a[0]; // b has type string, not string | undefined as you might expect
+b.toUpperCase(); // This explodes at runtime
 
 const record: Record<string, string> = { foo: "foo" };
 const bar = record["bar"]; // bar has type string, not string | undefined
-bar.toUpperCase(); // boom
+bar.toUpperCase(); // This explodes at runtime
+
+const baz = record.baz; // baz has type string, not string | undefined
+baz.toUpperCase(); // This explodes at runtime
+
+const str = "";
+const s = str[0]; // s has type string, not string | undefined
+s.toUpperCase(); // This explodes at runtime
 ```
 
 `get` is a safe alternative:
@@ -93,9 +100,11 @@ const constObj1 = get(constObj, 1); // "asdf"
 const constObj100 = get(constObj, 100); // doesn't compile
 ```
 
+You only need to use this if you are stuck on Typescript < 4.1.
+
 ## ESLint
 
-There's a corresponding ESLint plugin to ban the partial functions replaced by this library.
+There's a corresponding ESLint plugin to enforce the use of `noUncheckedIndexedAccess` and/or ban the partial functions replaced by this library.
 
 See https://github.com/danielnixon/eslint-plugin-total-functions
 
